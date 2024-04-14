@@ -6,8 +6,8 @@ from project.models import User
 
 class NewBusinessForm(FlaskForm):
     title = StringField('Name of the Business', validators=[DataRequired(), Length(min=1, max=30)])
-    contact = StringField('Contact details', validators=[DataRequired(), Length(min=1, max=30)])
-    text = StringField('Extra information', validators=[DataRequired(), Length(min=1, max=30)])
+    contact = StringField('Contact details', validators=[DataRequired(), Length(min=1, max=50)])
+    text = StringField('Extra information', validators=[DataRequired(), Length(min=1, max=100)])
     submit = SubmitField('Submit')
 
 

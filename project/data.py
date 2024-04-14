@@ -18,7 +18,7 @@ test_businesses = [
     },
     {
         'title': 'Cozy Cafe',
-        'contact': '555-1234 | info@kuckokavezo.hu',
+        'contact': '555-1234 | info@cozycafe.hu',
         'text': 'A cafe that welcomes its guests with a cozy atmosphere and various delicious coffees.',
         'user_id': 2
     }
