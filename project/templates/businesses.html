@@ -1,0 +1,19 @@
+{% extends 'index.html' %}
+
+
+{% block content %}
+
+    {% for business in businesses %}
+        <a href="{{ url_for('business', business_id=business.id) }}" class="card-link">
+            <div class="card mt-3" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ business.title }}</h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">{{ business.owner.username}}</h6>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">{{ business.contact }}</h6>
+                    <p class="card-text">{{ business.text }}</p>
+                </div>
+            </div>
+        </a>
+    {% endfor %}
+
+{% endblock content %}

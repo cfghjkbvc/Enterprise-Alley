@@ -1,0 +1,23 @@
+body {
+    background-color: #787474;
+    }
+
+.card {
+    background-color: white;
+    color: black;
+}
+
+.card-body p {
+    text-align: right;
+}
+
+.card-link {
+    text-decoration: none
+
+form {
+    width: 600px;    
+}
+
+.form-group {
+    margin-bottom: 15px
+}

@@ -1,0 +1,37 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <div class="card mt-3" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{ business.title }}</h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">{{ business.contact }}</h6>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">{{ business.owner.username}}</h6>
+                    <p class="card-text">{{ business.text }}</p>
+        {% if business.owner == current_user %}
+          <div>
+            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ url_for('update_business', business_id=business.id) }}">Update</a>
+            <button type="button" class="btn btn-danger btn-sm m-1" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</button>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+
+ <!-- Modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="deleteModalLabel">Do you want to delete your business?</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-footer" style="flex-wrap: nowrap">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <form style="display: inline" action="{{ url_for('delete_business', business_id=business.id) }}" method="POST">
+              <input class="btn btn-danger" type="submit" value="Delete">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+{% endblock content %}
